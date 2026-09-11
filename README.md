@@ -24,6 +24,7 @@ Verify network connectivity and DNS resolution.
 Take a clean VM snapshot for recovery.
 Document the complete setup process, including issues encountered.
 Prepare the environment for future cybersecurity projects.
+
 🛡️ Purpose of the Lab
 
 The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing.
@@ -47,21 +48,37 @@ Kali Linux runs as the attacking machine on a private VirtualBox NAT Network, is
 (Insert lab architecture / VirtualBox network diagram screenshot here)
 
 ⚙️ Lab Configuration
+
 🧩 Component	⚙️ Configuration
+
 🖥️ Host OS	Windows 10
+
 🧰 Hypervisor	VirtualBox 7.2.4
+
 🐉 Security OS	Kali Linux 2026.2 (upgraded from 2025.4)
+
 🧠 Kali RAM	4096 MB
+
 ⚙️ Kali CPUs	2
+
 🌐 Virtual Network	Custom NAT Network
+
 📡 Network Address	10.0.0.0/24
+
 🐧 Kali IP Address	10.0.0.2/24 (static)
+
 🚪 Default Gateway	10.0.0.1
+
 🌍 DNS Server	8.8.8.8
+
 📁 Shared Folder	Host Downloads → /media/sf_Downloads
+
 📋 Clipboard/Drag-Drop	Bidirectional
+
 🔮 Future VM Range	10.0.0.3 – 10.0.0.99
+
 🪜 Lab Setup Procedure
+
 Step 1. Install 7-Zip
 
 7-Zip was installed to extract the Kali Linux virtual-machine package.
