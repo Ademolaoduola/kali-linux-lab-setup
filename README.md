@@ -47,34 +47,22 @@ Kali Linux runs as the attacking machine on a private VirtualBox NAT Network, is
 <img width="921" height="469" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/9a589a18-8ade-4821-b458-272bc47ff6a6" />
 
 
+## ⚙️ Lab Configuration
 
-⚙️ Lab Configuration
-
-🧩 Component	                                                                                           ⚙️ Configuration
-
-🖥️ Host OS                                                                                               	Windows 10
-
-🧠 Host RAM                                                                                                  8GB
-
-⚡ Processor                                                                                            	Intel Core i5
-
-🧰 Hypervisor	                                                                                            VirtualBox 7.2.4
-
-🐉 Security OS	                                                                                          Kali Linux 2026.3
-
-🧠 Kali RAM                                                                                              	4096 MB
-
-⚙️ Kali CPUs	2
-
-🌐 Virtual Network	                                                                                      Custom NAT Network
-
-📡 Network Address	10.0.0.0/24
-
-🐧 Kali IP Address	10.0.0.2/24 (static)
-
-🚪 Default Gateway	10.0.0.1
-
-🌍 DNS Server	8.8.8.8
+| Component | Configuration |
+|--------------------|----------------------|
+| Host OS | Windows 10 |
+| Host RAM | 8 GB |
+| Processor | Intel Core i5 |
+| Hypervisor | VirtualBox 7.2.4 |
+| Security OS | Kali Linux 2026.3 |
+| Kali RAM | 4096 MB |
+| Virtual Network | NAT Network |
+| Network Address | 10.0.0.0/24 |
+| Kali IP Address | 10.0.0.2/24 |
+| Default Gateway | 10.0.0.1 |
+| DNS Server | 8.8.8.8 |
+| Future VM Range | 10.0.0.3–10.0.0.99 |
 
 📁 Shared Folder	Host Downloads → /media/sf_Downloads
 
@@ -164,27 +152,30 @@ Snapshot Name: Clean Setup - 10.0.0.2 NatNetwork
 If a future exercise changes or damages the VM configuration, the machine can be restored to this baseline. A second snapshot was later taken before upgrading Kali Linux, and a third after the upgrade completed successfully — giving multiple recovery points across the lab's history.
 
 🔎 Lab Verification
-✅ Test	🧾 Command	🎯 Expected Result
 
-🌐 Check IP address	ip a	Correct Kali IP displayed (10.0.0.2/24)
 
-📡 Test gateway	ping 10.0.0.1	Successful replies
-
-🌍 Test Internet connectivity	ping 8.8.8.8	Successful replies
-
-🔎 Test DNS resolution	nslookup networkwalks.com	Domain resolves
-
-📁 Verify shared folder	ls /media/sf_Downloads	Host Downloads files listed
-
-🧰 Verify OS version	cat /etc/os-release	Correct Kali version displayed
-
-🔄 Verify snapshot	Restore snapshot and run ip a	Baseline configuration restored
+| Test | Command | Expected Result |
+|--------------------------|----------------------------------|------------------------------------------|
+| Check IP address | `ip a` | Correct Kali IP displayed (10.0.0.2/24) |
+| Test gateway | `ping 10.0.0.1` | Successful replies |
+| Test Internet connectivity | `ping 8.8.8.8` | Successful replies |
+| Test DNS resolution | `nslookup networkwalks.com` | Domain resolves |
+| Verify shared folder | `ls /media/sf_Downloads` | Host Downloads files listed |
+| Verify OS version | `cat /etc/os-release` | Correct Kali version displayed |
+| Verify snapshot | Restore snapshot and run `ip a` | Baseline configuration restored |
 
 Example Results
-IP Address: 10.0.0.2/24
-Gateway:    10.0.0.1
-DNS:        8.8.8.8
-Ping:       661 packets transmitted, 652 received, 1.36% packet loss
+IP Address:
+10.0.0.2/24
+
+Gateway:
+10.0.0.1
+
+DNS:
+8.8.8.8
+
+Ping: 661 packets transmitted, 652 received, 1.36% packet loss
+
 🐞 Problems Encountered & Solutions
 
 Documenting problems is an important part of the project — real-world lab building rarely goes perfectly on the first try.
