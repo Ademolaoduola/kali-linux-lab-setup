@@ -44,24 +44,29 @@ Security-tool experimentation
 🏗️ Lab Architecture
 
 Kali Linux runs as the attacking machine on a private VirtualBox NAT Network, isolated from the main host network but with outbound internet access via NAT. Additional target machines can be added to the same virtual network in future projects.
+<img width="921" height="469" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/9a589a18-8ade-4821-b458-272bc47ff6a6" />
 
-(Insert lab architecture / VirtualBox network diagram screenshot here)
+
 
 ⚙️ Lab Configuration
 
-🧩 Component	⚙️ Configuration
+🧩 Component	                                                                                           ⚙️ Configuration
 
-🖥️ Host OS	Windows 10
+🖥️ Host OS                                                                                               	Windows 10
 
-🧰 Hypervisor	VirtualBox 7.2.4
+🧠 Host RAM                                                                                                  8GB
 
-🐉 Security OS	Kali Linux 2026.2 (upgraded from 2025.4)
+⚡ Processor                                                                                            	Intel Core i5
 
-🧠 Kali RAM	4096 MB
+🧰 Hypervisor	                                                                                            VirtualBox 7.2.4
+
+🐉 Security OS	                                                                                          Kali Linux 2026.3
+
+🧠 Kali RAM                                                                                              	4096 MB
 
 ⚙️ Kali CPUs	2
 
-🌐 Virtual Network	Custom NAT Network
+🌐 Virtual Network	                                                                                      Custom NAT Network
 
 📡 Network Address	10.0.0.0/24
 
@@ -99,11 +104,17 @@ Network Name: NatNetwork
 IPv4 Prefix:  10.0.0.0/24
 DHCP:         Enabled
 
+<img width="3759" height="1980" alt="8882A78A-D389-4739-997C-C5A2DD7767D5" src="https://github.com/user-attachments/assets/e793f9fa-6d10-412a-adee-d1ade57cddf6" />
+
+
 A NAT Network was selected (rather than standard NAT) because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound internet connectivity — allowing future attacker and target VMs to communicate within the lab.
 
 Step 4. Import and Configure Kali Linux
 
 The Kali Linux virtual machine was downloaded from the official Kali Linux site and imported into VirtualBox.
+
+<img width="3875" height="1929" alt="18FAB758-0F2B-474A-8166-B26034DB16CF" src="https://github.com/user-attachments/assets/88ce1e56-461a-431d-8239-9cc3387894ce" />
+
 
 The VM's network adapter was configured as follows:
 
@@ -120,6 +131,10 @@ Processors: 2
 A shared folder (host Downloads folder) and bidirectional clipboard/drag-and-drop were also configured under Settings → General → Advanced and Settings → Shared Folders, to allow easy file transfer between the host and the Kali VM.
 
 Step 5. Configure the Kali Linux Network
+
+<img width="3691" height="1951" alt="E2F50E3C-4ED0-4A5D-B601-795822351FEB" src="https://github.com/user-attachments/assets/0a902b94-20ef-41e2-b248-b13182dd770c" />
+
+
 
 Kali Linux's network was configured with a consistent, static IPv4 address using nmcli:
 
@@ -150,13 +165,21 @@ If a future exercise changes or damages the VM configuration, the machine can be
 
 🔎 Lab Verification
 ✅ Test	🧾 Command	🎯 Expected Result
+
 🌐 Check IP address	ip a	Correct Kali IP displayed (10.0.0.2/24)
+
 📡 Test gateway	ping 10.0.0.1	Successful replies
+
 🌍 Test Internet connectivity	ping 8.8.8.8	Successful replies
+
 🔎 Test DNS resolution	nslookup networkwalks.com	Domain resolves
+
 📁 Verify shared folder	ls /media/sf_Downloads	Host Downloads files listed
+
 🧰 Verify OS version	cat /etc/os-release	Correct Kali version displayed
+
 🔄 Verify snapshot	Restore snapshot and run ip a	Baseline configuration restored
+
 Example Results
 IP Address: 10.0.0.2/24
 Gateway:    10.0.0.1
@@ -253,12 +276,14 @@ I learned that documenting commands, configuration, screenshots, problems, and s
 This laboratory is intended strictly for educational purposes. All testing activities are performed exclusively within the isolated lab environment against systems owned by the lab operator.
 
 🔗 Tools & Resources
+
 7-Zip: https://7-zip.org/download.html
 VirtualBox: https://virtualbox.org/wiki/Downloads
 Kali Linux: https://kali.org/get-kali
+
 👤 Author
 
-Ademola Oduola Field Service Engineer, Globacom | Transitioning into Network Security & SOC Cybersecurity & Ethical Hacking Program — NetworkWalks
+Ademola Oduola 
 
 📌 Project Information
 
